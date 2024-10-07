@@ -41,7 +41,8 @@
                         </tr>
                         <tr>
                             <th>สถานะการชำระเงิน</th>
-                            <td><input type="checkbox" name="status" data-toggle="switchbutton" data-onlabel="ชำระเงินแล้ว" data-offlabel="ยังไม่ได้ชำระเงิน" data-onstyle="success" data-offstyle="danger" data-width="125" value = "1" {{ $orders->status ? 'checked' : '' }} onchange='this.form.submit()'> value คือ {{ $orders->status}}</td>
+                            <td><input onchange='this.form.submit()' type="checkbox" id="payment_status" name="status" @if ($orders->status) checked @endif>value คือ {{ $orders->status }}</td>
+                            
                         </tr>
                     </tbody>
                 </table>
@@ -98,9 +99,17 @@
 
         </div>
     </div>
+    <script>
+        $(function() {
+            // config 
+            $('#payment_status').bootstrapToggle({
+                on: 'ชำระเงินแล้ว',
+                off: 'ยังไม่ได้ชำระเงิน',
+                onstyle: 'success',
+                offstyle: 'danger'
+            });
+        });
+    </script>
     {!! Form::close() !!}
     {!! Form::close() !!}
-<script>
-    
-</script>
 @endsection

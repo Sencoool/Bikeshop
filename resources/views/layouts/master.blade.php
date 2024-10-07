@@ -10,19 +10,16 @@
 <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/all.min.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script></head> {{-- โหลดอันแรกสุด --}}
+<script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>{{-- โหลดอันแรกสุด --}}
 {{-- asset laravel runs into public --}}
 <link rel="stylesheet" href="{{ asset('vendor/toastr/toastr.min.css') }}">
-<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
-<script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
 <script src="{{ asset('vendor/toastr/toastr.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-
-<body>
-<script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
 <script src="{{ asset('js/angular.min.js') }}"></script>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+</head> {{-- จะเรียกใช้ JQuery หลายอันไม มันพังหมดเลยเห้ย --}}
+<body>
 
 <nav class="navbar navbar-default navbar-static-top">
 <div class="container">    
