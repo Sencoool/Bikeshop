@@ -41,7 +41,7 @@
                         </tr>
                         <tr>
                             <th>สถานะการชำระเงิน</th>
-                            <td><input onchange='this.form.submit()' type="checkbox" id="payment_status" name="status" @if ($orders->status) checked @endif>value คือ {{ $orders->status }}</td>
+                            <td><input onchange='this.form.submit()' type="checkbox" id="payment_status" name="status" @if ($orders->status) checked @endif></td>
                             
                         </tr>
                     </tbody>

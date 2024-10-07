@@ -26,8 +26,7 @@
 
                                 <div class="form-group">
                                     <div>คงเหลือ: @{p.stock_qty}</div>
-                                    <div>ราคา <strong>@{p.price}</strong> บาท</div>
-                                    
+                                    <div>ราคา <strong>@{p.price|number:2}</strong> บาท</div>                                    
                                 </div>
                                 @guest
                                 @else

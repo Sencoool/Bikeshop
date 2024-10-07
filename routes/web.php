@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderingController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/employee/order', [App\Http\Controllers\OrderingController::class, 'index']);
 Route::get('/employee/detail/{id}', [App\Http\Controllers\OrderingController::class, 'viewDetail']);
 Route::post('/employee/changeStatus', [OrderingController::class, 'changeStatus']);
+
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/user/search', [UserController::class, 'search']);
+Route::post('/user/search', [UserController::class, 'search']);
+Route::get('/user/edit/{id?}', [UserController::class, 'edit']);
+Route::post('/user/update', [UserController::class, 'update']);
+Route::get('/user/add', [UserController::class, 'add']);
+Route::post('/user/insert', [UserController::class, 'insert']);
+Route::get('/user/remove/{id}', [UserController::class, 'remove']);
 
 
 

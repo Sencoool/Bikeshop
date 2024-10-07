@@ -30,9 +30,15 @@
     <ul class="nav navbar-nav">
     <li><a href="{{ URL::to('home') }}">หน้าแรก</a></li> @guest
     @else
-    <li><a href="{{ URL::to('product') }}">จัดการข้อมูลสินค้า </a></li>
-    <li><a href="{{ URL::to('/employee/order') }}">รายการสั่งซื้อสินค้า </a></li>
-    <li><a href="#">รายงาน</a></li> @endguest
+   <li><a href="{{ URL::to('product') }}">ข้อมูลสินค้า </a></li>
+    @if(Auth::user()->level === 'admin')
+        <li><a href="{{ URL::to('category') }}">ข้อมูลประเภทสินค้า </a></li>
+        <li><a href="{{ URL::to('/user') }}">ข้อมูลผู้ใช้</a></li>
+    @elseif(Auth::user()->level === 'employee')
+        <li><a href="{{ URL::to('category') }}">ข้อมูลประเภทสินค้า </a></li>
+        <li><a href="{{ URL::to('/employee/order')}}">ข้อมูลการสั่งซื้อสินค้า</a></li>
+    @endif
+    @endguest
     </ul>
     <ul class="nav navbar-nav navbar-right"> @guest
         </span></a></li>
@@ -44,7 +50,7 @@
             @if (Session::has('cart_items'))
                 {!! count(Session::get('cart_items')) !!}
             @else
-                {{ count(array())}}
+                {{ count(array()) }}
             @endif
         <li><a href="#">{{ Auth::user()->name }} </a></li>
         <li><a class="dropdown-item" href=""
