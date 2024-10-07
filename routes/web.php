@@ -52,8 +52,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/employee/order', [App\Http\Controllers\OrderingController::class, 'index']);
-
 Route::get('/employee/detail/{id}', [App\Http\Controllers\OrderingController::class, 'viewDetail']);
+Route::post('/employee/changeStatus', [OrderingController::class, 'changeStatus']);
 
 
 

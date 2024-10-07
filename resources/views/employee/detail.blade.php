@@ -1,6 +1,10 @@
 @extends('layouts.master')
 @section('title') BikeShop | รายละเอียดการสั่งซื้อ @stop
 @section('content')
+{!! Form::model($orders, array('action' => 'App\Http\Controllers\OrderingController@changeStatus','method' => 'post', 'enctype' => 'multipart/form-data')) !!} {{-- เขียนชื่อ Controller ผิดนา --}}
+{!! Form::model($orders, array('method' => 'post', 'enctype' => 'multipart/form-data')) !!}
+<input type="hidden" name="id" value="{{ $orders->id }}">
+
     <div class="container">
         <h1>Order Detail</h1>
         <ul class="breadcrumb">
@@ -37,7 +41,7 @@
                         </tr>
                         <tr>
                             <th>สถานะการชำระเงิน</th>
-                            <td><input type="checkbox" data-toggle="switchbutton" checked data-onlabel="ชำระเงินแล้ว" data-offlabel="ยังไม่ได้ชำระเงิน" data-onstyle="success" data-offstyle="danger" checked data-width="125"></td>
+                            <td><input type="checkbox" name="status" data-toggle="switchbutton" data-onlabel="ชำระเงินแล้ว" data-offlabel="ยังไม่ได้ชำระเงิน" data-onstyle="success" data-offstyle="danger" data-width="125" value = "1" {{ $orders->status ? 'checked' : '' }} onchange='this.form.submit()'> value คือ {{ $orders->status}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -94,4 +98,9 @@
 
         </div>
     </div>
+    {!! Form::close() !!}
+    {!! Form::close() !!}
+<script>
+    
+</script>
 @endsection

@@ -15,7 +15,7 @@
 
 
 
-            <table class="table table-bordered  bs_table"> {{-- ปิด Table ไม --}}
+            <table class="table table-bordered  bs_table">
                 <thead>
                     <tr>
                         <th>OrderID</th>

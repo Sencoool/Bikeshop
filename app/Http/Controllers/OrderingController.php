@@ -29,4 +29,14 @@ class OrderingController extends Controller
 
         return view('employee/detail', compact('orders', 'order_detail'));
     }
+
+    public function changeStatus(Request $request){
+        $id = $request->id; //error ตั้งนานเพราะแม่งลืมส่ง id เข้า Function
+
+        $orders = Order::find($id);
+        $orders->status = $request->has('status') ? 1 : 0;
+        $orders->save();
+
+        return redirect()->back();
+    }
 }
