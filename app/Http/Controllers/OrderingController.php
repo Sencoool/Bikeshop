@@ -37,6 +37,6 @@ class OrderingController extends Controller
         $orders->status = $request->has('status') ? 1 : 0;
         $orders->save();
 
-        return redirect()->back();
+        return redirect('employee/order');
     }
 }

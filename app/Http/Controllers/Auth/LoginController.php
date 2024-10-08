@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo;
 
     /**
      * Create a new controller instance.
@@ -36,5 +36,14 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    protected function authenticated($request, $user)
+    {
+        // กำหนด redirect ตามระดับผู้ใช้
+        if ($user->level === 'admin' || $user->level === 'employee') {
+            $this->redirectTo = '/product'; // สำหรับ admin และ employee
+        } elseif ($user->level === 'customer') {
+            $this->redirectTo = '/home'; // สำหรับ customer
+        }
     }
 }
