@@ -1,1 +1,1 @@
-DB -> https://drive.google.com/drive/folders/1iGUXgkE7cVLUWREFNxvZUNubPhbOhxD7?usp=sharing
+DB -> open CMD type -> php artisan migrate -> php artisan db:seed
