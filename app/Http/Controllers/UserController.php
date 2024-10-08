@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User; // import User model
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
 
@@ -132,7 +133,7 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->level = $request->level;
         $user->save();
         return redirect('user')->with('ok', true)->with('msg', 'เพิ่มข้อมูลผู้ใช้เรียบร้อยแล้ว');
