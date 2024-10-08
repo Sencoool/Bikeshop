@@ -76,7 +76,7 @@ class CartController extends Controller
             return redirect('cart/view')->with('error', 'No items in cart.');
         }
 
-        $po_no = 'PO' . date('Ymd') . rand(10, 99);   
+        $po_no = 'PO' . date('Ymd') . rand(10, 99). rand(10, 99);   
         $po_date = date("d-m-Y H:i:s");
         $total_amount = 0;
 
