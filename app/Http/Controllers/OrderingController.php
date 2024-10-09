@@ -16,10 +16,10 @@ class OrderingController extends Controller
         return view('employee/index', compact('orders'));
     }
 
-    public function viewOrder()
+   /* public function viewOrder()
     {
-        return view('employee/index');
-    }
+        return view('employee/index');                 
+    }*/
 
     public function viewDetail($id) {
 

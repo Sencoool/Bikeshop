@@ -32,7 +32,7 @@
     <tbody>
         @foreach($products as $p)
         <tr>
-            <td><img src="{{ $p->image_url }}" alt="" width="50px"></td>
+            <td><img src="/{{ $p->image_url }}" alt="" width="100px"></td>
             <td>{{ $p->code }}</td>
             <td>{{ $p->name }}</td>
             <td>{{ $p->category->name }}</td>

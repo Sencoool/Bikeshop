@@ -34,7 +34,7 @@
                             <th style="vertical-align: middle;">{{ sprintf('%03d', $o->id) }}</th>
                             <th style="color: rgb(76, 76, 251); vertical-align: middle;">{{ $o->order_number }}</th>
                             <th style="vertical-align: middle;">{{ $o->name }}</th>
-                            <th class="bs-center" style="vertical-align: middle;">{{ \Carbon\Carbon::parse($o->create_at)->format('Y/m/d') }}</th>
+                            <th class="bs-center" style="vertical-align: middle;">{{ \Carbon\Carbon::parse($o->created_at)->format('Y/m/d') }}</th>
                             <th class="bs-center" style="vertical-align: middle;">
                                 <a href="{{ URL::to('employee/detail/' . $o->id) }}"> รายละเอียด </a>
                             </th>
@@ -57,7 +57,7 @@
         <div class="container">
             {{ $orders->links() }}
         </div>
-        <script>
+        <!--<script>
             function togglePayment(event) {
                 var th = event.currentTarget; // ใช้ currentTarget เพื่ออ้างถึง th ที่ถูกคลิก
 
@@ -70,5 +70,5 @@
                     th.style.backgroundColor = "green";
                 }
             }
-        </script>
+        </script>-->
     @endsection

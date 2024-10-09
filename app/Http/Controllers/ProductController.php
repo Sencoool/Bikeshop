@@ -16,7 +16,7 @@ class ProductController extends Controller
         return view('product/index', compact('products'));
     }
 
-    var $rp = 5; //show product 
+    var $rp = 4; //show product 
 
     public function search(Request $request){
         $query = $request->q;
