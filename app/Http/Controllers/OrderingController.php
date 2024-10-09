@@ -14,7 +14,7 @@ class OrderingController extends Controller
     {  
         $orders = Order::paginate($this->rp);
         return view('employee/index', compact('orders'));
-    }
+    }   
 
    /* public function viewOrder()
     {

@@ -5,8 +5,8 @@
     <div class="container">
         <h1>Order </h1>
         <ul class="breadcrumb">
-            <li><a href="{{ URL::to('product') }}"><i class="fa fa-home"></i>หน้าร้าน</a></li>
-            <li class="active">รายการสั่งซื้อสินค้า </li>
+            <li><a href="{{ URL::to('home') }}"><i class="fa fa-home"></i>หน้าร้าน</a></li>
+            <li class="active">รายการสั่งซื้อสินค้า</li>
         </ul>
         <div class="panel panel-default">
             <div class="panel-heading">
